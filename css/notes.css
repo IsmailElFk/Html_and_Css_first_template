@@ -1,0 +1,198 @@
+/* 
+Scc selectors :
+-- *
+-- Elemnt [div, p, h1 ...]
+-- Element in other element [div p]
+-- .Class
+-- #Id
+-- .parent .child
+-- .class1.class2 (in the same element)
+-- .class div (div in elemnt with the class name)
+-- .class div, .class p (div or p in elemnt with the class name)
+-- p .class (p only, any elements with the same class name they couldn´t take the style of the class except p  )
+-- .parent > .child (direct child)
+-- div + p (direct element)
+-- div ~ p (brothers element)
+-- [attribute] (title)
+-- element[attribute] (div[title])
+-- [attribute=value] (title="helo")
+-- element[attribute=value] (div[title="helo"])
+-- [attribute=~value] (title=~"helo it -me-") world
+-- [attribute*=value] (title*="heloit-me-") string or sub string
+-- [attribute^=value] (title^="he") started with a string
+-- :first-child (p:first-child)
+-- :last-child (p:last-child)
+-- :first-of-type (p:first-of-type)
+-- :last-of-type (p:last-of-type)
+-- :only-child (p:only-child)
+-- :only-of-type (p:only-of-type)
+-- :not(selectors) p:not(:first-child) (every p except the first child) /p:not(.helo)
+-- :nth-child(2) p:nth-child(2) (the 2nd p in his father) / :nth-child(even) (2, 4, 6, 8...) (odd) (1, 3, 5, 7...)
+-- :nth-last-child(2) p:nth-last-child(2) (the 2nd p in his father from end to start)
+-- :nth-of-type(3) p:nth-of-type(3) (the 3rd p of his type)
+-- :nth-last-of-type(3) p:nth-last-of-type(3) (the 3rd p of his type form endvto start)
+-- :root
+-- :checked (#82 ep / checked element)
+-- :empty (div:empty = <div></div>)
+-- :disabled (disabled element)
+-- :required
+-- :focus
+-- ::selection
+-- ::placeholder
+
+
+
+/* background style */
+div {
+    display: block ,inline, inline-block;
+    /* background-image: url(../Images/Background.png) linear-gradient( direction [exp to right , to left , to top , to bottom] color 1 [exp red  20%] color 2 [exp green  40%] color n ) */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; contain; */
+    /* background-position:center ; */
+
+}
+/* images et autres */
+div {
+    display: block ,inline, inline-block;
+    /* margin */
+    /* border */
+    /* padding */
+    /* border */
+    /* border-radius: exp 50% , 10px; */
+
+}
+
+
+
+
+/* Title text paraghraphe style */
+h1 {
+    display: block ,inline, inline-block, flex, inline-flex(if u want any element to go next to a flex) , grid , inline-grid;
+    /* color: exp rgba(255, 255, 255, 0.712); */
+    /* direction: rtl,ltr; */
+    /* vertical-align: exp middle; */
+    /* text-align:exp center; */
+    /* text-decoration: exp none; */
+    /* text-transform: exp capitalize; */
+    /* line-height: 1.6; */
+    /* width: 100px; [u can also us "cal()" into width preposition] */
+    /* white-space: nowrap; */
+    /* word-break: break-word; */
+    /* font-family: exp sans-serif; */
+    /* font-size:vw(better one),em,px; */
+    /* font-weight: lighter,bolder; */
+    /* float: left, right; */
+    /* pointer-events: exp  none; */
+    
+
+    /* [flex box] : */
+
+    /* flex-direction: exp  row(DV) , row-reverse , column , column-reverse; */
+    /* flex-wrap: wrap , nowrap(DV) , wrap-reverse; */
+    /* flex-flow: row wrap ; */
+    /* justify-content: flex-start(DV) , flex-end , center , space-between(space between elements) , space-around (around the elemets) , space-evenly (space-around + space-between); */
+    /* align-items: stretch(DV) , flex-start , flex-end , center ; */
+    /* align-content: stretch(DV) , flex-start , flex-end , center , space-between , space-around , space-evenly ;  (all content)  */
+    /* flex-grow: 0(DV) , (1.....n); (if the element have any space to grow he going to grow)  */
+    /* flex-shrink: 1(DV) ; (≠ flex-grow) */
+    /* order: 0(DV) (1....n); (u can put  any  element in the order u want ) */
+    /* flex-basis: auto(DV) , npx , n%; (only in iteams) (flex-basics respect width) */
+    /* flex(SH): flex-grow  flex-shrink  flex-basis ; */
+    /* align-self: auto(DV) , flex-start , flex-end , center; ( self control for element ) */
+
+    /* [grid] : */
+    /* "|" grid-template-columns: exp 25% 25% 25%  
+    /* repeat( 3, auto) */
+    /* minmax(200px, 400px) */
+    /* repeat(auto-fill, minmax(200px, 1fr)) */
+
+    /* "--" grid-template-rows:  20px auto 20px; */
+    /* row-gap:  10px; */
+    /* column-gap:  10px; */
+    /* gap(SH): ´--´row-gap , ´|´column-gap ; */
+    /* grid-column: /* 1 / 5 */
+                  /* span 4 */
+                  /* 2 span 3 */
+
+    /* grid-row:  /* 1 / 5 */
+                  /* span 4 */
+                  /* 2 span 3 */
+
+
+    /* [transform] :
+   transform: /*  scaleX(2) / scaleY(2) / scale(2, 2) or scale(2) */
+              /*  rotate(360deg)=6.28rad=400grad=1turn  */
+              /*  translate(30%x,20%y) */
+              /*  skewX(25deg) / skewY(25deg) / skew(25deg,25deg) */
+              /*  matrix(scaleX, skewX, skewY, scaleY, translateX, translateY) */
+              /* transform-origin: 50% 50%;  */
+              /* rotate3d(1x, 1y, 1z 45deg) */
+              /* translate3d(10px, 10px, 10px) (x, y, z ) in father => perspective: 300px perspective-origin: right bottom */
+              /* backface-visibility: hidden; */
+              /* transform-style: preserve-3d; */
+              /* animation-name: change-color;
+              /* animation-duration: 3s; */
+              /* animation-iteration-count: infinite (number of animation´s times); */
+              /* animation-timing-function: ease , linear; */
+              /* animation-diration: reverse , alternate(normale and reverse) , alternate-reverse; */
+              /* animation-delay: 2s; */
+              /* animation-fill-mode: forwards; take the last animation of keyframe */
+              /* animation-play-state: paused; (control the animation action) */
+              /* animation: (SH) */
+              /* @keyframes change-color { 
+                form {
+                    background-color: rgb(165, 73, 150);
+                }
+                
+                to {
+                    background-color: rgb(71, 24, 63);
+                }
+               */
+
+              /* [media] : 
+              @media condition {} (@media  print {} / max-width(npx) / min-width(npx) / max-width and min-width
+              <link  rel="stylesheet" href="css/style-exercice.css" media="print" /> */
+
+              /* [Global Values] :
+              initial (display:initial;) (initial value of element)
+              unset (color:uncet;) (uncet=inherit if the value can be inherit form the father) (=initial if not)
+              revert (body:revert;) (revert value to user agent value´s)
+              */
+
+
+    /* overflow: hidden; */
+    /* opacity: 0-->1; */
+    /* position: 
+                 /* relative(top or bottom orright or left) */
+                 /* absolute(top or bottom orright or left)*/
+                 /* fixed(top or bottom orright or left) */
+                 /* sticky(top or bottom orright or left) */
+        
+    /* z-index: [any value of number u want (the bigest one will be appeared in the interface) (u should use it with "position") ]; */
+    /* "<element>:pseudo classe" exp "a:hover" (pseudo Classes) */
+    /* "<element>::peudo element" exp "p::first-line , before , after , content" (pseudo Elements) */
+    /* box model and box sizing  */
+    /* transition-duration:  0.5s; (smooth transition) */
+    /* transition-delay:  1s; */ 
+    /* transition-property: all , margin , width , height; (the property that u gonna make transition at him) */
+    /* transition-timing-function:  ease , linear; (like Ae ghrapiques) */
+    
+}
+
+  /*  [filters] : */
+
+
+   /* grayscale */
+   /* blur */
+
+
+
+
+
+
+
+/* NB :
+!important
+fraction [:}] auto [:)]
+Required, Placeholder, Value #25
+  */
